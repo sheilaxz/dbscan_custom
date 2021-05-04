@@ -76,7 +76,6 @@ class DBSCAN():
         See https://en.wikipedia.org/wiki/DBSCAN
 
         Inputs:
-        :param df: A dataframe whose columns are feature vectors
         :param eps: Maximum distance two points can be to be regionally related
         :param min_points: The minimum number of points to make a cluster
 
