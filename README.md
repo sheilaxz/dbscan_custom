@@ -30,32 +30,44 @@ Class DBSCAN(df, distance_matrix = pd.DataFrame()):
 
 	Parameters :   
 
-		df :  A dataframe whose columns are feature vectors
+		df :  
+		A dataframe whose columns are feature vectors
 
-		distance_matrix :  A custom distance matrix (must be square) where each cell is the pair distance between two data points. The default value is an empty matrix, which means there is no custom matrix input. Then the distance measurements used will be Euclidean distances.  
+		distance_matrix :  
+		A custom distance matrix (must be square) where each cell is the pair distance between two data points. 
+		The default value is an empty matrix, which means there is no custom matrix input. 
+		Then the distance measurements used will be Euclidean distances.  
 	
 	Attributes :  
 
-		distance_matrix :  Returns the distance matrix input  
+		distance_matrix :  
+		Returns the distance matrix input  
 
-		custom :  True if a custom distance matrix is given. Otherwise False, which means the measurement is Euclidean distance.
+		custom :  
+		True if a custom distance matrix is given. 
+		Otherwise False, which means the measurement is Euclidean distance.
 
 
 	def dbscan(self, eps, min_points):  
 
 	Parameters :
 
-		eps :  Maximum distance two points can be to be regionally related
+		eps :  
+		Maximum distance two points can be to be regionally related
 
-		min_points:  The minimum number of points to make a cluster
+		min_points:  
+		The minimum number of points to make a cluster
 
-	Return :  An array with either a cluster id number or Noise (-1) for each row vector (data point) in df.
+	Return :  
+		An array with either a cluster id number or Noise (-1) for each row vector (data point) in df.
 
 	Attributes :  
 
-		classifications:  An array with either a cluster id number or Noise (-1) for each row vector (data point) in df.
+		classifications:  
+		An array with either a cluster id number or Noise (-1) for each row vector (data point) in df.
 
-		counts : collections.Counter on the classification array, showing the distinct classes and number of items in each class.
+		counts : 
+		collections.Counter on the classification array, showing the distinct classes and number of items in each class.
 
 
 	Example :
