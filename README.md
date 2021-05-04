@@ -25,46 +25,42 @@ DBSCAN_custom.py includes a class function for this algorithm.
 
 ## Instruction<a name="instruction"></a>
 
+```
 Class DBSCAN(df, distance_matrix = pd.DataFrame()):
-	"""
+
+	Parameters :   
+
+		df :  A dataframe whose columns are feature vectors
+
+		distance_matrix :  A custom distance matrix (must be square) where each cell is the pair distance between two data points. The default value is an empty matrix, which means there is no custom matrix input. Then the distance measurements used will be Euclidean distances.  
+	
+	Attributes :  
+
+		distance_matrix :  Returns the distance matrix input  
+
+		custom :  True if a custom distance matrix is given. Otherwise False, which means the measurement is Euclidean distance.
+
+
+	def dbscan(self, eps, min_points):  
+
 	Parameters :
 
-	df : A dataframe whose columns are feature vectors
+		eps :  Maximum distance two points can be to be regionally related
 
-	distance_matrix : A custom distance matrix (must be square) where each cell is the pair distance between two data points.  
-                      The default value is an empty matrix, which means there is no custom matrix input. Then the distance measurements used will be Euclidean distances.  
-	
-	Attributes :
+		min_points:  The minimum number of points to make a cluster
 
-	distance_matrix : Returns the distance matrix input  
+	Return :  An array with either a cluster id number or Noise (-1) for each row vector (data point) in df.
 
-	custom : True if a custom distance matrix is given. 
-			 Otherwise False, which means the measurement is Euclidean distance.
-	"""
+	Attributes :  
+
+		classifications:  An array with either a cluster id number or Noise (-1) for each row vector (data point) in df.
+
+		counts : collections.Counter on the classification array, showing the distinct classes and number of items in each class.
 
 
-	def dbscan(self, eps, min_points)
-	"""
-	Parameters :
-
-    	eps : Maximum distance two points can be to be regionally related
-
-        min_points: The minimum number of points to make a cluster
-
-    Return :
-        An array with either a cluster id number or Noise (-1) for each row vector (data point) in df.
-
-    Attributes :
-
-    	classifications: An array with either a cluster id number or Noise (-1) for each row vector (data point) in df.
-
-    	counts : collections.Counter on the classification array, showing the distinct classes and number of items in each class.
-    """
-
-	
 	Example :
 
-	----------
+	---
 
 	# Use Euclidean distance
 	>>> df = pd.DataFrame({'x': [1, 1, 2, 7, 8, 8, 17], 'y': [2, 1, 2, 8, 7, 9, 25]})
@@ -85,11 +81,11 @@ Class DBSCAN(df, distance_matrix = pd.DataFrame()):
 	# Use custom distance matrix
 	>>> dis_mat = pd.DataFrame(0, index = range(7), columns = range(7))
 	>>> for i in range(7):
-    		for j in range(7):
-        		dis_mat.iloc[i, j] = math.dist(df.iloc[i, :], df.iloc[j, :])
-    >>> clustering = DBSCAN(df, dis_mat)
-    >>> clustering.distance_matrix
-           0          1          2          3          4          5          6
+			for j in range(7):
+    			dis_mat.iloc[i, j] = math.dist(df.iloc[i, :], df.iloc[j, :])
+	>>> clustering = DBSCAN(df, dis_mat)
+	>>> clustering.distance_matrix
+    	   0          1          2          3          4          5          6
 	0   0.000000   1.000000   1.000000   8.485281   8.602325   9.899495  28.017851
 	1   1.000000   0.000000   1.414214   9.219544   9.219544  10.630146  28.844410
 	2   1.000000   1.414214   0.000000   7.810250   7.810250   9.219544  27.459060
@@ -104,8 +100,8 @@ Class DBSCAN(df, distance_matrix = pd.DataFrame()):
 	>>> clustering.counts
 	Counter({1: 3, 2: 3, -1: 1})
 
-	----------
-
+	---
+```
 
 ## Licensing, Authors, Acknowledgements<a name="licensing"></a>
 
