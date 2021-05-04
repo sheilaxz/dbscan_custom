@@ -6,11 +6,9 @@
 # This dbscan algorithm with custom distance measurements are for those cases when novel distance measurements are used
 
 
-import numpy as np
 import math
 import pandas as pd
 from collections import Counter
-import seaborn as sns
 
 class DBSCAN():
 
