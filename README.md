@@ -51,7 +51,7 @@ Class DBSCAN(df, distance_matrix = pd.DataFrame()):
 
 ```
 
-	def dbscan(self, eps, min_points):  
+	def get_cluster(self, eps, min_points):  
 
 	Parameters :
 
@@ -89,7 +89,7 @@ Columns: []
 Index: []
 >>> clustering.custom
 False
->>> clustering.dbscan(2, 2)
+>>> clustering.get_cluster(2, 2)
 [1, 1, 1, 2, 2, 2, -1]
 >>> clustering.classifications
 [1, 1, 1, 2, 2, 2, -1]
@@ -113,8 +113,10 @@ Counter({1: 3, 2: 3, -1: 1})
 6  28.017851  28.844410  27.459060  19.723083  20.124612  18.357560   0.000000
 >>> clustering.custom
 True
->>> clustering.dbscan(3, 2)
+>>> clustering.get_cluster(3, 2)
 [1, 1, 1, 2, 2, 2, -1] 
+>>> clustering.classifications
+[1, 1, 1, 2, 2, 2, -1]
 >>> clustering.counts
 Counter({1: 3, 2: 3, -1: 1})
 

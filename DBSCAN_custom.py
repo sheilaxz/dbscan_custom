@@ -71,7 +71,7 @@ class DBSCAN():
             return True
 
 
-    def dbscan(self, eps, min_points):
+    def get_cluster(self, eps, min_points):
         """Implementation of Density Based Spatial Clustering of Applications with Noise
         See https://en.wikipedia.org/wiki/DBSCAN
 
@@ -93,4 +93,5 @@ class DBSCAN():
         self.classifications = classifications
         self.counts = Counter(classifications)
         return classifications
+
 
