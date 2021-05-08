@@ -125,7 +125,7 @@ Counter({1: 3, 2: 3, -1: 1})
 
 ## Licensing, Authors, Acknowledgements<a name="licensing"></a>
 
-Must give credits to Martin Ester, Hans-Peter Kriegel, Jörg Sander, Xiaowei Xu, who proposed DBSCAN in 1996.  
+Must give credits to Martin Ester, Hans-Peter Kriegel, Jörg Sander, Xiaowei Xu, who proposed DBSCAN in 1996 [[2](https://www.aaai.org/Papers/KDD/1996/KDD96-037.pdf?source=post_page)].  
 
-Also give credits to [Choffstein](https://github.com/choffstein/dbscan/blob/master/dbscan/dbscan.py), as the current version of the algorithm was coded on the base of his work.
+Also give credits to [Choffstein](https://github.com/choffstein), as the current version of the algorithm was coded on the base of his [work](https://github.com/choffstein/dbscan/blob/master/dbscan/dbscan.py).
 
