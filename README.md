@@ -23,7 +23,13 @@ The code should run with no issues using Python versions 3.
 
 DBSCAN_custom.py includes a class function for this algorithm. 
 
+
 ## Instruction<a name="instruction"></a>
+
+```
+example = DBSCAN(df, distance_matrix)
+clustering = example.dbscan(eps, min_points)
+```
 
 ```
 Class DBSCAN(df, distance_matrix = pd.DataFrame()):
